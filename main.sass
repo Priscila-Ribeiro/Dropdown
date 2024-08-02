@@ -1,0 +1,63 @@
+@import 'variaveis'
+@import 'mixins'
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    text-decoration: none
+    list-style: none
+
+html
+    font-size: 62.5%
+
+.menu
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    font-weight: bold
+    background: $bg
+    color: black
+    box-shadow: $shadow
+
+    @include mixins.flexCenter
+    justify-content: space-around
+
+    .logo
+        @include mixins.flexCenter
+        padding: 1.5rem 0.5rem
+
+        color: $cor-logo
+        text-shadow:$txtshadow
+        font-size: 3rem
+
+    ul
+        @include mixins.flexCenter
+        justify-content: space-between
+        gap: 2.5rem
+
+        li a, .dropbtn
+            display: block
+            font-size: 1.5rem
+            color: black
+
+        li a:hover, .dropdown:hover .dropbtn
+            color: blueviolet
+            font-size: 1.8rem
+            transition: 0.3s ease-in
+
+        li .dropdown
+         display: inline-block
+
+        .dropdown-content
+            position: absolute
+
+            display: none
+
+            width: 160px
+            border: $bg
+            background-color: $bg
+            box-shadow: 0 0 1.6rem 0.4rem rgba(0,0,0,0.15)
+            padding: 1.5rem
+            border-radius: 1.5rem
+
+        .dropdown:hover .dropdown-content
+            display: block
